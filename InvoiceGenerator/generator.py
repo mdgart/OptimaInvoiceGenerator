@@ -14,6 +14,7 @@ from reportlab.pdfgen.canvas import Canvas
 from .api import Invoice as ApiInvoice
 from .pdf import BaseInvoice
 
+from conf import FONT_PATH
 
 class Address:
     firstname = ""
@@ -67,7 +68,7 @@ class Invoice:
         self.TOP = 260
         self.LEFT = 20
 
-        pdfmetrics.registerFont(TTFont('DejaVu', '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVu', FONT_PATH))
 
         self.pdffile = NamedTemporaryFile(delete=False)
 
